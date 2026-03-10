@@ -1,0 +1,820 @@
+import 'zone.js';
+import {Component} from '@angular/core';
+import {bootstrapApplication} from '@angular/platform-browser';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  template: `
+    <h1>Hello from {{ 'Γεια σου ' + name }}!</h1>
+    <a target="_blank" href="https://angular.dev/overview">
+      Learn more about Angular
+    </a>
+  `,
+})
+export class App {
+  name = 'Angular';
+}
+
+bootstrapApplication(App);
+
+
+
+import 'zone.js';
+import {Component} from '@angular/core';
+import {bootstrapApplication} from '@angular/platform-browser';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  template: `
+    <h1>Hello from {{ 1+1 }}!</h1>
+    <a target="_blank" href="https://angular.dev/overview">
+      Learn more about Angular
+    </a>
+  `,
+})
+export class App {
+  name = 'Angular';
+}
+
+bootstrapApplication(App);
+
+
+import 'zone.js';
+import {Component} from '@angular/core';
+import {bootstrapApplication} from '@angular/platform-browser';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  template: `
+    <h1>Hello from {{ 'Γεια σου ' + name }}!</h1>
+    <h1>Παράδειγμα νο1  {{ number*10 }}!</h1>
+    <a target="_blank" href="https://angular.dev/overview">
+      Learn more about Angular
+    </a>
+  `,
+})
+export class App {
+  name = 'Angular';
+  number = 1;
+}
+
+bootstrapApplication(App);
+
+
+import 'zone.js';
+import {Component} from '@angular/core';
+import {bootstrapApplication} from '@angular/platform-browser';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  template: `
+    <div style="text-align: center; padding: 20px;">
+  <h2>Προφίλ Χρήστη: {{ username }}</h2>
+  
+  <a [href]="kostas" target="_blank">
+    Δείτε το GitHub του {{ username }}
+  </a>
+</div>
+  `,
+})
+export class App {
+  username = 'nikkar1985';
+  kostas = 'https://github.com/' + this.username;
+}
+
+
+import 'zone.js';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common'; 
+import { bootstrapApplication } from '@angular/platform-browser';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [CommonModule],
+  template: `
+    <div style="font-family: sans-serif; padding: 20px;">
+      <h1>{{ 'Γεια σου ' + name }}!</h1>
+      
+      <h3>Μετρητής: {{ number }}</h3>
+      <p>Πολλαπλασιασμός (x10): {{ number * 10 }}</p>
+
+      <button (click)="increaseNumber()">Αύξηση +1</button>
+      <button (click)="decreaseNumber()">Μείωση -1</button>
+
+      <hr>
+
+      <div *ngIf="number > 10" style="color: green; font-weight: bold;">
+        <p>🎉 Συγχαρητήρια! Ξεπεράσατε το 10!</p>
+      </div>
+
+      <div *ngIf="number < 0" style="color: red;">
+        <p>Προσοχή: Ο αριθμός είναι αρνητικός!</p>
+      </div>
+
+      <hr>
+
+      <h3>Λίστα Μαθητών:</h3>
+      <ul>
+        <li *ngFor="let student of students">
+          {{ student }}
+        </li>
+      </ul>
+
+      <button (click)="addStudent()">Προσθήκη Νέου Μαθητή</button>
+      
+      <hr>
+      <a target="_blank" href="https://angular.dev/overview">
+        Μάθετε περισσότερα για την Angular
+      </a>
+    </div>
+  `,
+})
+export class App {
+  
+  name = 'Angular';
+  number = 1;
+  students = ['Μάξιμος', 'Νίκος', 'Γιώργος', 'Άννα'];
+
+  
+  increaseNumber() {
+    this.number = this.number + 1;
+  }
+
+  decreaseNumber() {
+    this.number = this.number - 1;
+  }
+
+  addStudent() {
+    this.students.push('Νέος Μαθητής ' + (this.students.length + 1));
+  }
+}
+
+bootstrapApplication(App);
+
+
+import 'zone.js';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common'; 
+import { bootstrapApplication } from '@angular/platform-browser';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [CommonModule],
+  template: `
+    <div style="font-family: sans-serif; padding: 20px;">
+      <h1>{{ 'Γεια σου ' + name }}!</h1>
+      
+      <h3>Μετρητής: {{ number }}</h3>
+      <p>Πολλαπλασιασμός (x10): {{ number * 10 }}</p>
+
+      <button (click)="increaseNumber()">Αύξηση +1</button>
+      <button (click)="decreaseNumber()">Μείωση -1</button>
+
+      <hr>
+
+      <div *ngIf="number > 10" style="color: green; font-weight: bold;">
+        <p>🎉 Συγχαρητήρια! Ξεπεράσατε το 10!</p>
+      </div>
+
+      <div *ngIf="number < 0" style="color: red;">
+        <p>Προσοχή: Ο αριθμός είναι αρνητικός!</p>
+      </div>
+
+      <hr>
+
+      <h3>Λίστα Μαθητών:</h3>
+      <ul>
+        <li *ngFor="let student of students">
+          {{ student }}
+        </li>
+      </ul>
+
+      <button (click)="addStudent()">Προσθήκη Νέου Μαθητή</button>
+      
+      <hr>
+      <a target="_blank" href="https://angular.dev/overview">
+        Μάθετε περισσότερα για την Angular
+      </a>
+    </div>
+  `,
+})
+export class App {
+  
+  name = 'Angular';
+  number = 1;
+  students = ['Μάξιμος', 'Νίκος', 'Γιώργος', 'Άννα'];
+
+  
+  increaseNumber() {
+    this.number = this.number + 1;
+  }
+
+  decreaseNumber() {
+    this.number = this.number - 1;
+  }
+
+  addStudent() {
+    this.students.push('Νέος Μαθητής ' +  (this.students.length));
+  }
+}
+
+bootstrapApplication(App);
+
+
+
+
+import 'zone.js';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common'; // Απαραίτητο για τα *ngIf και *ngFor
+import { bootstrapApplication } from '@angular/platform-browser';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [CommonModule], // Προσθέτουμε το CommonModule για να δουλέψουν τα directives
+  template: `
+    <div style="font-family: sans-serif; padding: 20px;">
+      <h1>{{ 'Γεια σου ' + name }}!</h1>
+      
+      <h3>Μετρητής: {{ number }}</h3>
+      <p>Πολλαπλασιασμός (x10): {{ number * 10 }}</p>
+
+      <button (click)="increaseNumber()">Αύξηση +1</button>
+      <button (click)="decreaseNumber()">Μείωση -1</button>
+
+      <hr>
+
+      <div *ngIf="number > 10" style="color: green; font-weight: bold;">
+        <p>🎉 Συγχαρητήρια! Ξεπεράσατε το 10!</p>
+      </div>
+
+      <div *ngIf="number < 0" style="color: red;">
+        <p>Προσοχή: Ο αριθμός είναι αρνητικός!</p>
+      </div>
+
+      <hr>
+
+      <h3>Λίστα Μαθητών:</h3>
+      <ul>
+        <li *ngFor="let student of students">
+          {{ student }}
+        </li>
+      </ul>
+
+      <button (click)="addStudent()">Προσθήκη Νέου Μαθητή</button>
+      
+      <hr>
+      <a target="_blank" href="https://angular.dev/overview">
+        Μάθετε περισσότερα για την Angular
+      </a>
+    </div>
+  `,
+})
+export class App {
+  // Δεδομένα (TypeScript Variables)
+  name = 'Angular';
+  number = 1;
+  students = ['Μάξιμος', 'Νίκος', 'Γιώργος', 'Άννα'];
+
+  // Μέθοδοι (Functions)
+  increaseNumber() {
+    this.number = this.number + 1;
+  }
+
+  decreaseNumber() {
+    this.number = this.number - 1;
+  }
+
+  addStudent() {
+    this.students.push('Νέος Μαθητής ' + (this.students.length + 1));
+  }
+}
+
+bootstrapApplication(App);
+
+
+import 'zone.js';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common'; 
+import { bootstrapApplication } from '@angular/platform-browser';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [CommonModule], 
+  template: `
+    <div style="font-family: sans-serif; padding: 20px;">
+      <h1>{{ 'Γεια σου ' + name }}!</h1>
+      
+      <h3>Μετρητής: {{ number }}</h3>
+
+      <button (click)="increaseNumber()">Αύξηση +1</button>
+      <button (click)="decreaseNumber()">Μείωση -1</button>
+
+      <hr>
+
+      <div *ngIf="number > 10; else lowNumber">
+        <p style="color: green; font-weight: bold;">🎉 Συγχαρητήρια! Ξεπεράσατε το 10!</p>
+      </div>
+
+      <ng-template #lowNumber>
+        <p style="color: gray;">Πρέπει να φτάσετε πάνω από το 10 για το βραβείο...</p>
+      </ng-template>
+
+      <hr>
+
+      <h3>Λίστα Μαθητών:</h3>
+      
+      <div *ngIf="students.length > 0; else emptyMessage">
+        <ul>
+          <li *ngFor="let sddd of students; let i = index">
+            {{ sddd }} 
+            <button (click)="removeStudent(i)" style="color: red; margin-left:10px;">X</button>
+          </li>
+        </ul>
+      </div>
+
+      <ng-template #emptyMessage>
+        <p style="color: red; font-style: italic;">Η λίστα είναι άδεια! Προσθέστε κάποιον.</p>
+      </ng-template>
+
+      <button (click)="addStudent()">Προσθήκη Νέου Μαθητή</button>
+      <button (click)="clearAll()">Διαγραφή Όλων</button>
+      
+      <hr>
+      <a target="_blank" href="https://angular.dev/overview">
+        Μάθετε περισσότερα για την Angular
+      </a>
+    </div>
+  `,
+})
+export class App {
+  name = 'Angular';
+  number = 1;
+  students = ['Μάξιμος', 'Νίκος', 'Γιώργος', 'Άννα'];
+
+  increaseNumber() {
+    this.number++;
+  }
+
+  decreaseNumber() {
+    this.number--;
+  }
+
+  addStudent() {
+    this.students.push('Νέος Μαθητής ' + (this.students.length + 1));
+  }
+
+  removeStudent(index: number) {
+    this.students.splice(index, 1);
+  }
+
+  clearAll() {
+    this.students = [];
+  }
+}
+
+bootstrapApplication(App);
+
+
+
+import 'zone.js';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common'; 
+import { bootstrapApplication } from '@angular/platform-browser';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [CommonModule], 
+  template: `
+    <div style="font-family: sans-serif; padding: 20px;">
+      <h1>{{ 'Γεια σου ' + name }}!</h1>
+      
+      <h3>Μετρητής: {{ number }}</h3>
+
+      <button (click)="increaseNumber()">Αύξηση +1</button>
+      <button (click)="decreaseNumber()">Μείωση -1</button>
+
+      <hr>
+
+      <div *ngIf="number > 10; else lowNumber">
+        <p style="color: green; font-weight: bold;">🎉 Συγχαρητήρια! Ξεπεράσατε το 10!</p>
+      </div>
+
+      <ng-template #lowNumber>
+        <p style="color: gray;">Πρέπει να φτάσετε πάνω από το 10 για το βραβείο...</p>
+      </ng-template>
+
+      <hr>
+
+      <h3>Λίστα Μαθητών:</h3>
+      
+      <div *ngIf="students.length > 0; else emptyMessage">
+        <ul>
+          <li *ngFor="let sddd of students; let i = index" style="margin-bottom: 10px;">
+            <strong>{{ sddd }}</strong>
+            
+            <button (click)="editStudent(i)" style="margin-left: 15px; color: blue;">Επεξεργασία ✏️</button>
+            
+            <button (click)="removeStudent(i)" style="color: red; margin-left:10px;">Διαγραφή 🗑️</button>
+          </li>
+        </ul>
+      </div>
+
+      <ng-template #emptyMessage>
+        <p style="color: red; font-style: italic;">Η λίστα είναι άδεια! Προσθέστε κάποιον.</p>
+      </ng-template>
+
+      <hr>
+      <button (click)="addStudent()">Προσθήκη Νέου Μαθητή</button>
+      <button (click)="clearAll()" style="margin-left: 10px;">Καθαρισμός Λίστας</button>
+      
+      <hr>
+      <small>Μάθημα Angular - Διαχείριση Δεδομένων</small>
+    </div>
+  `,
+})
+export class App {
+  name = 'Angular';
+  number = 1;
+  students = ['Μάξιμος', 'Νίκος', 'Γιώργος', 'Άννα'];
+
+  increaseNumber() {
+    this.number++;
+  }
+
+  decreaseNumber() {
+    this.number--;
+  }
+
+  addStudent() {
+    this.students.push('Νέος Μαθητής ' + (this.students.length + 1));
+  }
+
+  removeStudent(index: number) {
+    this.students.splice(index, 1);
+  }
+
+  editStudent(index: number) {
+    const oldName = this.students[index];
+    const newName = prompt('Αλλάξτε το όνομα του μαθητή:', oldName);
+
+    if (newName !== null && newName.trim() !== '') {
+      this.students[index] = newName;
+    }
+  }
+
+  clearAll() {
+    this.students = [];
+  }
+}
+
+bootstrapApplication(App);
+
+
+import 'zone.js';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common'; 
+import { FormsModule } from '@angular/forms';  
+import { bootstrapApplication } from '@angular/platform-browser';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [CommonModule, FormsModule], 
+  template: `
+    <div style="font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; border: 1px solid #ccc; border-radius: 10px;">
+      
+      <h1>Σχολείο: {{ schoolName }}</h1>
+      <input [(ngModel)]="schoolName" placeholder="Αλλάξτε το όνομα του σχολείου" style="width: 100%; padding: 5px;">
+      
+      <hr>
+
+      <h3>Μετρητής: {{ number }}</h3>
+      <button (click)="increaseNumber()">Αύξηση +1</button>
+      <button (click)="decreaseNumber()">Μείωση -1</button>
+
+      <div *ngIf="number > 10; else lowNumber">
+        <p style="color: green; font-weight: bold;">🎉 Συγχαρητήρια! Ξεπεράσατε το 10!</p>
+      </div>
+      <ng-template #lowNumber>
+        <p style="color: gray;">Στόχος: Πάνω από 10 για το βραβείο.</p>
+      </ng-template>
+
+      <hr>
+
+      <h3>Προσθήκη Μαθητή:</h3>
+      <input [(ngModel)]="newStudentName" placeholder="Όνομα μαθητή...">
+      <button (click)="saveStudent()" [disabled]="!newStudentName">Αποθήκευση</button>
+      <p *ngIf="newStudentName">Πληκτρολογείτε: <i>{{ newStudentName }}</i></p>
+
+      <hr>
+
+      <h3>Λίστα Μαθητών:</h3>
+      <div *ngIf="students.length > 0; else emptyMessage">
+        <ul>
+          <li *ngFor="let sddd of students; let i = index" style="margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
+            <span><strong>{{ i + 1 }}. {{ sddd }}</strong></span>
+            <div>
+              <button (click)="editStudent(i)" style="color: blue;">✏️</button>
+              <button (click)="removeStudent(i)" style="color: red; margin-left:5px;">🗑️</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <ng-template #emptyMessage>
+        <p style="color: red; font-style: italic;">Η λίστα είναι άδεια!</p>
+      </ng-template>
+
+      <button (click)="clearAll()" style="width: 100%; margin-top: 10px; background-color: #f44336; color: white; border: none; padding: 10px; cursor: pointer;">
+        Καθαρισμός Λίστας
+      </button>
+      
+    </div>
+  `,
+})
+export class App {
+
+  schoolName = 'ΙΕΚ ΔΕΛΤΑ 360';
+  number = 1;
+  students = ['Μάξιμος', 'Νίκος', 'Γιώργος', 'Άννα'];
+  newStudentName = '';
+
+  increaseNumber() {
+    this.number++;
+  }
+
+  decreaseNumber() {
+    this.number--;
+  }
+
+  saveStudent() {
+    if (this.newStudentName.trim() !== '') {
+      this.students.push(this.newStudentName);
+      this.newStudentName = '';
+    }
+  }
+
+  removeStudent(index: number) {
+    this.students.splice(index, 1);
+  }
+
+  editStudent(index: number) {
+    const oldName = this.students[index];
+    const newName = prompt('Αλλαγή ονόματος:', oldName);
+    if (newName !== null && newName.trim() !== '') {
+      this.students[index] = newName;
+    }
+  }
+
+  clearAll() {
+    if(confirm('Είστε σίγουροι ότι θέλετε να διαγράψετε τα πάντα;')) {
+      this.students = [];
+    }
+  }
+}
+
+bootstrapApplication(App);
+
+import 'zone.js';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common'; 
+import { FormsModule } from '@angular/forms';  
+import { bootstrapApplication } from '@angular/platform-browser';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [CommonModule, FormsModule], 
+  template: `
+    <div style="font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; border: 1px solid #ccc; border-radius: 10px;">
+      
+      <h1>Σχολείο: {{ schoolName }}</h1>
+      <input [(ngModel)]="schoolName" placeholder="Αλλάξτε το όνομα του σχολείου" style="width: 100%; padding: 5px;">
+      
+      <hr>
+
+      <h3>Μετρητής: {{ number }}</h3>
+      <button (click)="increaseNumber()">Αύξηση +1</button>
+      <button (click)="decreaseNumber()">Μείωση -1</button>
+
+      <div *ngIf="number > 10; else lowNumber">
+        <p style="color: green; font-weight: bold;">🎉 Συγχαρητήρια! Ξεπεράσατε το 10!</p>
+      </div>
+      <ng-template #lowNumber>
+        <p style="color: gray;">Στόχος: Πάνω από 10 για το βραβείο.</p>
+      </ng-template>
+
+      <hr>
+
+      <h3>Προσθήκη Μαθητή:</h3>
+      <input [(ngModel)]="newStudentName" placeholder="Όνομα μαθητή...">
+      <button (click)="saveStudent()" [disabled]="!newStudentName">Αποθήκευση</button>
+      <p *ngIf="newStudentName">Πληκτρολογείτε: <i>{{ newStudentName }}</i></p>
+
+      <hr>
+
+      <h3>Λίστα Μαθητών:</h3>
+      <div *ngIf="students.length > 0; else emptyMessage">
+        <ul>
+          <li *ngFor="let sddd of students; let i = index" style="margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
+            <span><strong>{{ i + 1 }}. {{ sddd }}</strong></span>
+            <div>
+              <button (click)="editStudent(i)" style="color: blue;">✏️</button>
+              <button (click)="removeStudent(i)" style="color: red; margin-left:5px;">🗑️</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <ng-template #emptyMessage>
+        <p style="color: red; font-style: italic;">Η λίστα είναι άδεια!</p>
+      </ng-template>
+
+      <button (click)="clearAll()" style="width: 100%; margin-top: 10px; background-color: #f44336; color: white; border: none; padding: 10px; cursor: pointer;">
+        Καθαρισμός Λίστας
+      </button>
+      
+    </div>
+  `,
+})
+export class App {
+
+  schoolName = 'ΙΕΚ ΔΕΛΤΑ 360';
+  number = 1;
+  students = ['Μάξιμος', 'Νίκος', 'Γιώργος', 'Άννα'];
+  newStudentName = '';
+
+  increaseNumber() {
+    this.number++;
+  }
+
+  decreaseNumber() {
+    this.number--;
+  }
+
+  saveStudent() {
+    if (this.newStudentName.trim() !== '') {
+      this.students.push(this.newStudentName);
+      this.newStudentName = '';
+    }
+  }
+
+  removeStudent(index: number) {
+    this.students.splice(index, 1);
+  }
+
+  editStudent(index: number) {
+    const oldName = this.students[index];
+    const newName = prompt('Αλλαγή ονόματος:', oldName);
+    if (newName !== null && newName.trim() !== '') {
+      this.students[index] = newName;
+    }
+  }
+
+  clearAll() {
+    if(confirm('Είστε σίγουροι ότι θέλετε να διαγράψετε τα πάντα;')) {
+      this.students = [];
+    }
+  }
+}
+
+bootstrapApplication(App);
+
+import 'zone.js';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common'; 
+import { FormsModule } from '@angular/forms';  
+import { bootstrapApplication } from '@angular/platform-browser';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [CommonModule, FormsModule], 
+  template: `
+    <div style="font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; border: 1px solid #ccc; border-radius: 10px; background-color: #f9f9f9;">
+      
+      <h1 style="color: #1976d2;">Σχολείο: {{ schoolName }}</h1>
+      <input [(ngModel)]="schoolName" placeholder="Όνομα σχολείου" style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 4px; border: 1px solid #ccc;">
+      
+      <hr>
+
+      <div style="text-align: center;">
+        <h3>Μετρητής: <span [style.color]="number > 10 ? 'green' : (number < 0 ? 'red' : 'black')">{{ number }}</span></h3>
+        <button (click)="increaseNumber()">Αύξηση +1</button>
+        <button (click)="decreaseNumber()" style="margin-left: 5px;">Μείωση -1</button>
+      </div>
+
+      <hr>
+
+      <h3>Προσθήκη Μαθητή:</h3>
+      <div style="display: flex; gap: 5px;">
+        <input [(ngModel)]="newStudentName" placeholder="Όνομα μαθητή..." style="flex: 1; padding: 8px;">
+        <button (click)="saveStudent()" [disabled]="!newStudentName" style="padding: 8px 15px;">Αποθήκευση</button>
+      </div>
+
+      <hr>
+
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h3>Λίστα Μαθητών ({{ students.length }})</h3>
+        <small>Σελίδα {{ currentPage }} από {{ totalPages() }}</small>
+      </div>
+      
+      <div *ngIf="students.length > 0; else emptyMessage">
+        <ul style="list-style: none; padding: 0;">
+          <li *ngFor="let sddd of students.slice((currentPage-1) * itemsPerPage, currentPage * itemsPerPage); let i = index" 
+              style="background: white; margin-bottom: 5px; padding: 10px; border-radius: 5px; display: flex; justify-content: space-between; border-left: 5px solid #1976d2;">
+            
+            <span><strong>{{ ((currentPage-1) * itemsPerPage) + i + 1 }}.</strong> {{ sddd }}</span>
+            
+            <div>
+              <button (click)="editStudent(((currentPage-1) * itemsPerPage) + i)" style="color: blue; border: none; background: none; cursor: pointer;">✏️</button>
+              <button (click)="removeStudent(((currentPage-1) * itemsPerPage) + i)" style="color: red; border: none; background: none; cursor: pointer; margin-left: 5px;">🗑️</button>
+            </div>
+          </li>
+        </ul>
+
+        <div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 15px;">
+          <button (click)="currentPage = currentPage - 1" [disabled]="currentPage === 1">Προηγούμενη</button>
+          
+          <button *ngFor="let page of [].constructor(totalPages()); let pageIdx = index" 
+                  (click)="currentPage = pageIdx + 1"
+                  [style.font-weight]="currentPage === pageIdx + 1 ? 'bold' : 'normal'"
+                  style="border: none; background: none; cursor: pointer;">
+            {{ pageIdx + 1 }}
+          </button>
+
+          <button (click)="currentPage = currentPage + 1" [disabled]="currentPage >= totalPages()">Επόμενη</button>
+        </div>
+      </div>
+
+      <ng-template #emptyMessage>
+        <p style="color: #f44336; font-style: italic; text-align: center;">Η λίστα είναι άδεια!</p>
+      </ng-template>
+
+      <hr>
+      <button (click)="clearAll()" style="width: 100%; background-color: #f44336; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">
+        Καθαρισμός Λίστας
+      </button>
+      
+    </div>
+  `,
+})
+export class App {
+  schoolName = 'ΙΕΚ ΔΕΛΤΑ 360';
+  number = 1;
+  students = ['Μάξιμος', 'Νίκος', 'Γιώργος', 'Άννα', 'Κώστας', 'Ελένη', 'Δημήτρης', 'Μαρία'];
+  newStudentName = '';
+
+  // Ρυθμίσεις Pagination
+  currentPage = 1;
+  itemsPerPage = 3; // Αλλαξέ το σε 5 για να δεις τη διαφορά
+
+  totalPages() {
+    return Math.ceil(this.students.length / this.itemsPerPage);
+  }
+
+  increaseNumber() { this.number++; }
+  decreaseNumber() { this.number--; }
+
+  saveStudent() {
+    if (this.newStudentName.trim() !== '') {
+      this.students.push(this.newStudentName);
+      this.newStudentName = '';
+      this.currentPage = this.totalPages(); // Πήγαινε αυτόματα στην τελευταία σελίδα
+    }
+  }
+
+  removeStudent(globalIndex: number) {
+    this.students.splice(globalIndex, 1);
+    // Διόρθωση: Αν σβήσουμε τον τελευταίο μαθητή μιας σελίδας, γύρισε πίσω
+    if (this.currentPage > this.totalPages() && this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
+
+  editStudent(globalIndex: number) {
+    const oldName = this.students[globalIndex];
+    const newName = prompt('Αλλαγή ονόματος:', oldName);
+    if (newName !== null && newName.trim() !== '') {
+      this.students[globalIndex] = newName;
+    }
+  }
+
+  clearAll() {
+    if(confirm('Σίγουρα θέλετε να διαγράψετε όλους τους μαθητές;')) {
+      this.students = [];
+      this.currentPage = 1;
+    }
+  }
+}
+
+bootstrapApplication(App);
